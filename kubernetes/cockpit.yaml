@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cockpit
+  labels:
+    app: cockpit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cockpit
+  template:
+    metadata:
+      labels:
+        app: cockpit
+    spec:
+      containers:
+        - name: cockpit
+          image: gcr.io/rtrentin-01/cockpit:$COMMIT_SHA
+          ports:
+            - containerPort: 8080
+
