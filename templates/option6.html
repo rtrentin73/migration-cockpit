@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bombs Away!</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-image: url("https://c2.staticflickr.com/8/7456/10806000244_3af05bfb5b_b.jpg");
+        background-size: cover;
+        height: 100vh;
+      }
+      h1 {
+        margin-top: 50px;
+        color: black;
+        font-family: 'Bangers', cursive;
+        font-size: 48px;
+      }
+      form {
+        margin-top: 50px;
+        text-align: left;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 24px;
+      }
+      input[type="submit"] {
+        margin-top: 20px;
+        width: 100%;
+        padding: 10px;
+        font-size: 24px;
+        background-color: lightblue;
+        border: none;
+        border-radius: 5px;
+      }
+      .back-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-family: 'Bangers', cursive;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bombs Away!</h1>
+    <form action="{{ url_for('option6') }}" method="post">
+      <label for="target">Select Target:</label>
+      <select name="target" id="target">
+        {% for target in targets %}
+          <option value="{{ target }}">{{ target }}</option>
+        {% endfor %}
+      </select>
+      <input type="text" name="message" placeholder="Enter message">
+      <input type="submit" value="Drop Bomb">
+    </form>
+    <a href="{{ url_for('index') }}" class="back-button">Back to Main Menu</a>
+  </body>
+</html>

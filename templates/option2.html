@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Setup Project</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-image: url("https://c1.staticflickr.com/3/2025/1877891858_dd25fabb51_z.jpg?zz=1");
+        background-size: cover;
+        height: 100vh;
+      }
+      h1 {
+        margin-top: 50px;
+        color: black;
+        font-family: 'Bangers', cursive;
+        font-size: 48px;
+      }
+
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+      }
+
+      .form-container select {
+        width: 200px;
+        height: 30px;
+        margin-top: 20px;
+        font-size: 20px;
+      }
+
+      .form-container input[type="submit"] {
+        width: 100px;
+        height: 30px;
+        margin-top: 20px;
+        font-size: 20px;
+      }
+
+      .back-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-family: 'Bangers', cursive;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Select Project</h1>
+    <div class="form-container">
+      <form action="" method="post">
+        <label for="project_id">Select Project:</label>
+        <select name="project_id" id="project_id">
+          {% for project_id, project_name in projects.items() %}
+            <option value="{{ project_id }}">{{ project_name }}</option>
+          {% endfor %}
+        </select>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <a href="{{ url_for('index') }}" class="back-button">Back to Main Menu</a>
+  </body>
+</html>
+

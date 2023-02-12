@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Discover Routes</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-image: url("https://c1.staticflickr.com/3/2025/1877891858_dd25fabb51_z.jpg?zz=1");
+        background-size: cover;
+        height: 100vh;
+      }
+      h1 {
+        margin-top: 50px;
+        color: black;
+        font-family: 'Bangers', cursive;
+        font-size: 48px;
+      }
+      table {
+        background-color: #f2f2f2;
+        margin: 50px auto;
+        border-collapse: collapse;
+        width: 80%;
+        max-width: 800px;
+      }
+      th, td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid black;
+      }
+      th {
+        background-color: #dddddd;
+      }
+      .back-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-family: 'Bangers', cursive;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Discover Routes</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Destination</th>
+          <th>Priority</th>
+          <th>Next Hop Instance</th>
+          <th>Next Hop IP</th>
+          <th>Next Hop Network</th>
+          <th>Next Hop VPN Tunnel</th>
+          <th>Next Hop Gateway</th>
+          <th>Tags</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for route in routes %}
+        <tr>
+          <td>{{ route.name }}</td>
+          <td>{{ route.destination }}</td>
+          <td>{{ route.priority }}</td>
+          <td>{{ route.nextHopInstance or '' }}</td>
+          <td>{{ route.nextHopIp or '' }}</td>
+          <td>{{ route.nextHopNetwork or '' }}</td>
+          <td>{{ route.nextHopVpnTunnel or '' }}</td>
+          <td>{{ route.nextHopGateway or '' }}</td>
+          <td>{{ route.tags or '' }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a class="back-button" href="/">Back to Main Menu</a>
+  </body>
+</html>
+
+

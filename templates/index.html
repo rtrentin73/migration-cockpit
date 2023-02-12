@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Migration Cockpit</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-image: url("https://c1.staticflickr.com/3/2025/1877891858_dd25fabb51_z.jpg?zz=1");
+        background-size: cover;
+        height: 100vh;
+      }
+      h1 {
+        margin-top: 50px;
+        color: black;
+        font-family: 'Bangers', cursive;
+        font-size: 48px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        text-align: left;
+      }
+      li {
+        margin: 20px 0;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-family: 'Bangers', cursive;
+        display: block;
+        width: 200px;
+        margin: 0 auto;
+      }
+      .back-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-family: 'Bangers', cursive;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Migration Cockpit</h1>
+    <ul>
+      <li><a href="{{ url_for('option1') }}">Setup Identity</a></li>
+      <li><a href="{{ url_for('option2') }}">Setup Project</a></li>
+      <li><a href="{{ url_for('option3', project_id=project_id) }}">Setup Network</a></li>
+      <li><a href="{{ url_for('option4') }}">Discover Routes</a></li>
+      <li><a href="{{ url_for('option5') }}">Setup Target</a></li>
+      <li><a href="{{ url_for('option6') }}">Bombs Away!</a></li>
+    </ul>
+    <a onclick="window.close()" class="back-button">End Mission</a>
+  </body>
+</html>
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Setup Identity</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-image: url("https://c1.staticflickr.com/3/2025/1877891858_dd25fabb51_z.jpg?zz=1");
+        background-size: cover;
+        height: 100vh;
+      }
+      h1 {
+        margin-top: 50px;
+        color: black;
+        font-family: 'Bangers', cursive;
+        font-size: 48px;
+      }
+      .instructions {
+        width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(192, 192, 192, 0.5);
+        text-align: left;
+        font-size: 24px;
+      }
+      .back-button {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-family: 'Bangers', cursive;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Setup Identity</h1>
+    <div class="instructions">
+      <p>To setup identity, follow these instructions:</p>
+      <ol>
+        <li>Go to the Google Cloud Console</li>
+        <li>Click the project drop-down and select or create the project that you want to use for this quickstart</li>
+        <li>Click the hamburger menu and select APIs & Services > Credentials</li>
+        <li>Click Create credentials > OAuth client ID</li>
+        <li>Select Web application</li>
+        <li>Enter a name for the application, specify a redirect URI (enter http://localhost:5000/option1), then click Create</li>
+        <li>Click OK to dismiss the resulting dialog</li>
+        <li>Click the download button (Download JSON) to the right of the client ID</li>
+        <li>Move this file to your working directory and rename it client_secret.json</li>
+      </ol>
+    </div>
+    <a href="{{ url_for('index') }}" class="back-button">Back to Main Menu</a>
+  </body>
+</html>
+
