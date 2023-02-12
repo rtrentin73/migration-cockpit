@@ -13,12 +13,11 @@ steps:
       - 'apply'
       - '-f'
       - 'kubernetes/cockpit.yaml'
-      - '--log-stream-stdout'
-      - '--logging=cloud-only'
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=us-east1'
       - 'CLOUDSDK_CONTAINER_CLUSTER=gke-east-vpc001'
       - 'CLOUDSDK_CORE_PROJECT=rtrentin-01'
 images:
   - 'gcr.io/$PROJECT_ID/cockpit:$COMMIT_SHA'
-
+options:
+    logging: CLOUD_LOGGING_ONLY
