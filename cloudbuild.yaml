@@ -12,9 +12,9 @@ steps:
     args:
       - 'apply'
       - '-f'
-      - 'kubernetes/cockpit.yaml
-      - --log-stream-stdout
-      - --logging=cloud-only
+      - 'kubernetes/cockpit.yaml'
+      - '--log-stream-stdout'
+      - '--logging=cloud-only'
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=us-east1'
       - 'CLOUDSDK_CONTAINER_CLUSTER=gke-east-vpc001'
