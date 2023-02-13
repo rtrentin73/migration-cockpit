@@ -18,5 +18,4 @@ COPY . .
 EXPOSE 80
 
 # Start Nginx and Gunicorn
-CMD service nginx start && gunicorn app:app -b 0.0.0.0:8000
-
+CMD service nginx start && gunicorn cockpit:app -b 0.0.0.0:8000
